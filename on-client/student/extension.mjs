@@ -22,7 +22,7 @@ export function createStudentView() {
         unknown: '확인 불가',
       };
       const valueOrUnknown = (value) => typeof value === 'string' && value.length > 0 ? value : '확인 불가';
-      const translated = (labels, value) => Object.hasOwn(labels, value) ? labels[value] : '확인 불가';
+      const translated = (labels, value) => Object.hasOwn(labels, value) ? `${labels[value]} (${value})` : '확인 불가';
       const addText = (parent, tag, text) => {
         const node = document.createElement(tag);
         node.textContent = text;
